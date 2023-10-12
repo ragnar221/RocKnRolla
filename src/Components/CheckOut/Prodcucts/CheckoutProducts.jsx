@@ -12,7 +12,7 @@ import {
 } from "./CheckoutProductsStyle";
 import Link from "../../Link/Link";
 import { formatPrice } from "../../../../utils/formatPrice";
-import CardProductCheckout from "./cardProductCheckout";
+import CardProductCheckout from "./CardProductCheckout";
 
 const CheckoutProducts = ({ cartItems, shippingCost, price }) => {
   return (
