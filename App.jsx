@@ -2,7 +2,8 @@ import "./App.css";
 import Layout from "./src/Components/Layout/Layout";
 import Routes from "./Routes/Routes";
 import Footer from "./src/Components/Footer/Footer";
-import Header from "./src/Components/header/Header";
+import Header from "./src/Components/header/header";
+
 
 
 function App() {
