@@ -46,18 +46,6 @@ const Blog = ({ id }) => {
       </ContainerTips>
       <ContainerRecetas>
         <RecipePaper square>
-        <BlogSubTitle>Ahora permitenos mostrarte algunos de los diseños que hemos hecho a pedido</BlogSubTitle>
-          
-          <RecipeLog sx={{ padding: 2 }}>
-            {recetas.map(
-              (receta) =>
-                tabIndex === receta.recetaNumber && (
-                  <CardsContainer>
-                    <DrinksCards key={receta.id} {...receta} />
-                  </CardsContainer>
-                )
-            )}
-          </RecipeLog>
         </RecipePaper>
       </ContainerRecetas>
     </BlogWrapper>
