@@ -11,7 +11,6 @@ import {
 import Logo from "../Logo/Logo";
 import CartIcon from "../CartIcon/CartIcon";
 import CartMenu from "../CartMenu/CartMenu";
-// import { motion } from "framer-motion";
 import { BiLogIn } from "react-icons/bi";
 import userSlice from "../../../redux/user/userSlice";
 import UserMenu from "../UserMenu/UserMenu";
