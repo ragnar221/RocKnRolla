@@ -10,7 +10,7 @@ import MyOrders from "../Pages/MyOrders/MyOrders";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import Congrats from "../Pages/Congrats/Congrats";
 import Summary from "../Pages/Summary/Summary";
-import Blog from "../Pages/Blog/conocenos";
+import Blog from "../Pages/conocenos/conocenos";
 
 const Routes = () => {
   return (

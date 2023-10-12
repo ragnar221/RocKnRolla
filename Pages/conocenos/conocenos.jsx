@@ -15,7 +15,7 @@ import {
   WorkshopImg
 } from "./conocenosStyle";
 import { useSelector } from "react-redux";
-import DrinksCards from "../../src/Components/drinksCards/DrinksCards";
+import DrinksCards from "../../src/Components/showcaseCards/showcaseCards";
 
 const Blog = ({ id }) => {
   const [tabIndex, setTabIndex] = useState(0);

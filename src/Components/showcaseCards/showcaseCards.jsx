@@ -8,7 +8,7 @@ import {
   CardTitle,
   CardWrapper,
   ItemContainer,
-} from "./DrinksCardsStyle";
+} from "./showcaseCardsStyle";
 
 const DrinksCards = ({
   name,
