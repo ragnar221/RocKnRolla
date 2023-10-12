@@ -52,7 +52,7 @@ createAddRecipe(
   "Este modelo esta basado en el iconico personaje Bane de la pelicula 'Batman, el caballero oscuro asciende' y fue realizado a pedido ",
   "un modelo unico de tipo camperon (casi un sobretodo) con forro de corderito, cuello amplio y cuero grueso. ideal para dias frios",
   "https://res.cloudinary.com/dfpp4mriw/image/upload/v1696826561/bane_y9ilro.jpg",
-  0,
+  random(0, 2)
   [
     "Realizado el 5 de mayo de 2019"
   ]

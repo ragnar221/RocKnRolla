@@ -12,6 +12,7 @@ export const createUser = async (nombre, email, password) => {
         return response.data;
     } catch (error) {
         return alert(error.response.data.errors[0].msg)
+        
     }
 }
 

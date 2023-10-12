@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FooterData, FooterSocialContainer, } from "./FooterStyle";
+import { FooterData, FooterImg, FooterSocialContainer, } from "./FooterStyle";
 import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 import Logo from "../Logo/Logo";
 
@@ -32,7 +32,7 @@ const Footer = () => {
         <li>0 800 567 8910</li>
         <li>mail.falso@gmail.com</li>
       </FooterData>
-      <Logo></Logo>
+      <FooterImg src="/images/logo1.png" alt="logo"/>
       <FooterSocialContainer>  
         <BsInstagram style={{ color: "white", cursor: "pointer" }} />
         <BsFacebook  style={{ color: "white", cursor: "pointer" }} />

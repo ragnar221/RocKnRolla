@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import {
-  BarraItem,
-  BarraList,
   BlogHeroContainer,
   BlogSubTitle,
   BlogTitle,
@@ -48,20 +46,9 @@ const Blog = ({ id }) => {
       </ContainerTips>
       <ContainerRecetas>
         <RecipePaper square>
-          <RecipeLabelContainer
-            variant="fullWidth"
-            textColor="primary"
-            indicatorColor="primary"
-            value={tabIndex}
-            onChange={handleTabChange}
-          >
-            <RecipeLabel label="Recetario 1">#1</RecipeLabel>
-            <RecipeLabel label="Recetario 2">#2</RecipeLabel>
-            <RecipeLabel label="Recetario 3">#3</RecipeLabel>
-          </RecipeLabelContainer>
+        <BlogSubTitle>Ahora permitenos mostrarte algunos de los diseños que hemos hecho a pedido</BlogSubTitle>
+          
           <RecipeLog sx={{ padding: 2 }}>
-            {/* {tabIndex === 1 && <Box></Box>}
-            {tabIndex === 2 && <Box></Box>} */}
             {recetas.map(
               (receta) =>
                 tabIndex === receta.recetaNumber && (

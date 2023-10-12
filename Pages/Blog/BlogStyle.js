@@ -39,8 +39,16 @@ export const BlogSubTitle = styled.h3`
   background-color: white;
   font-size: 3rem;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+  }
+
   @media only screen and (max-width: 624px) {
     font-size: 1.4rem;
+  }
+
+  @media (max-width: 425px) {
+    width: 17rem;
   }
 `;
 export const ContainerRecetas = styled.div`
@@ -96,12 +104,20 @@ justify-content: center;
 export const RecipeLabelContainer = styled.div`
 display: flex;
 flex-direction: row;
+gap: 20px;
 `;
 
 export const RecipeLabel = styled.div`
 display: flex;
+width: 3rem;
+height: 2rem;
 justify-content: center;
 align-items: center;
+background-image: url(https://res.cloudinary.com/dfpp4mriw/image/upload/v1697055447/leatherBackground_ziinv1.avif);
+border-radius: 6rem;
+color: antiquewhite;
+font-weight: 600;
+margin: 2rem;
 `;
 
 export const RecipeLog = styled.div`
@@ -117,6 +133,8 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 background-color: burlywood;
+margin-top: 4rem;
+width: 60%;
 `;
 
 export const WorkshopImg = styled.img`
@@ -124,4 +142,7 @@ width: 500px;
 height: auto;
 border-radius: 4rem;
 box-shadow: 2px 4px 12px 2px var(--negroheader) ;
+@media (max-width: 425px) {
+  width: 200px;
+}
 `;

@@ -96,6 +96,7 @@ export const ItemLink = styled(NavLink)`
   font-weight: 300;
   text-decoration: none;
   color: ${COLORS.primaryLight};
+  border-radius: 0.5rem;
   padding: 1rem 2rem;
   background-image: linear-gradient(
     120deg,

@@ -43,7 +43,7 @@ const Menu = () => {
           </li>
           <li>
             <ItemLink onClick={handleClick} to="blog">
-              Blog
+              Conocenos
             </ItemLink>
           </li>
           <li>

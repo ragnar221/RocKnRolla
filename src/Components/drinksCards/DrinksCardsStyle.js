@@ -15,6 +15,9 @@ export const CardImg = styled.img`
   width: 15rem;
   border-radius: 0.5rem;
   border: solid 1px var(--naranja);
+  @media (max-width: 425px) {
+    width: 7rem;
+  }
 `;
 export const CardInfoContainer = styled.div`
   display: flex;
