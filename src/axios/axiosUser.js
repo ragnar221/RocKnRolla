@@ -3,7 +3,7 @@ import { BASE_URL } from "../../utils/constants"
 
 export const createUser = async (nombre, email, password) => {
     try {
-        const response = await axios.post(`${BASE_URL}auth/register`, {
+        const response = await axios.post(`${BASE_URL}/register`, {
             nombre,
             email,
             password
@@ -18,7 +18,7 @@ export const createUser = async (nombre, email, password) => {
 
 export const loginUser = async (email, password) => {
     try {
-        const response = await axios.post(`${BASE_URL}auth/login`, {
+        const response = await axios.post(`${BASE_URL}/login`, {
             email,
             password
         });
