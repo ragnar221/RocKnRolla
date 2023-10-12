@@ -32,7 +32,7 @@ const Footer = () => {
         <li>0 800 567 8910</li>
         <li>mail.falso@gmail.com</li>
       </FooterData>
-      <FooterImg src="/images/logo1.png" alt="logo"/>
+      <FooterImg src="" alt="logo"/>
       <FooterSocialContainer>  
         <BsInstagram style={{ color: "white", cursor: "pointer" }} />
         <BsFacebook  style={{ color: "white", cursor: "pointer" }} />

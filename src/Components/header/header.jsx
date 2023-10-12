@@ -10,7 +10,7 @@ import {
 } from "./HeaderStyles";
 import Logo from "../Logo/Logo";
 import CartIcon from "../CartIcon/CartIcon";
-import CartMenu from "../CartMenu/CartMenu";
+import CartMenu from "../cartMenu/cartMenu";
 import { BiLogIn } from "react-icons/bi";
 import userSlice from "../../../redux/user/userSlice";
 import UserMenu from "../UserMenu/UserMenu";
