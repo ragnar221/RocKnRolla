@@ -13,7 +13,7 @@ import {
   RecipeLabel,
   RecipeLabelContainer,
   WorkshopImg
-} from "./BlogStyle";
+} from "./conocenosStyle";
 import { useSelector } from "react-redux";
 import DrinksCards from "../../src/Components/drinksCards/DrinksCards";
 

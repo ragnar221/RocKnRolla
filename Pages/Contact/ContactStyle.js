@@ -16,9 +16,13 @@ export const ContactoTitulo = styled.h2`
   justify-content: center;
   gap: 1rem;
   text-align: center;
+  font-weight: 700;
+  font-family:'Lato', sans-serif ;
 `;
 
 export const ContactoP = styled.p`
   text-align: center;
   margin-bottom: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
 `;

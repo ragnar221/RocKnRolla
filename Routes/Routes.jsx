@@ -10,7 +10,7 @@ import MyOrders from "../Pages/MyOrders/MyOrders";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import Congrats from "../Pages/Congrats/Congrats";
 import Summary from "../Pages/Summary/Summary";
-import Blog from "../Pages/Blog/Blog";
+import Blog from "../Pages/Blog/conocenos";
 
 const Routes = () => {
   return (
@@ -31,7 +31,7 @@ const Routes = () => {
       <Route path="/congrats" element={<Congrats />} />
       <Route path="*" element={<PageNotFound />} />
       <Route path="/resumen" element={<Summary />} />
-      <Route path="/blog" element={<Blog />} />
+      <Route path="/Blog" element={<Blog />} />
     </ReactDomRoutes>
   );
 };

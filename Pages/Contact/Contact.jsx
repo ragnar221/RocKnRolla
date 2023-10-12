@@ -23,11 +23,11 @@ const Contact = () => {
       <ContactoTitulo>
         <BsTelephone /> Telefono:
       </ContactoTitulo>
-      <ContactoP> 0-800-666-drink</ContactoP>
+      <ContactoP> 011-1234-5678</ContactoP>
       <ContactoTitulo>
         <FaRegEnvelope /> Email:
       </ContactoTitulo>
-      <ContactoP> info@drinksco.com</ContactoP>
+      <ContactoP> mail.falso@gmail.com</ContactoP>
     </ContactoContainerStyled>
   );
 };
