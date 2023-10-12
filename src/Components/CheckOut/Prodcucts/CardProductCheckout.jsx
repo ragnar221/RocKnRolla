@@ -1,5 +1,5 @@
 import Increase from "../../Increase/Increase";
-import Count from "../../Count/Count";
+import Count from "../../count/Count";
 import { formatPrice } from "../../../../utils/formatPrice";
 import { cartActions } from "../../../../redux/cart/cartActions";
 import { useDispatch } from "react-redux";
