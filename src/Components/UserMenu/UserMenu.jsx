@@ -11,7 +11,7 @@ import userSlice from "../../../redux/user/userSlice";
 import {
   CloseButtonContainerStyled,
   CloseButtonStyled,
-} from "../cartMenu/CartMenuStyle";
+} from "../cartMenu/cartMenuStyle";
 import { BiLogIn } from "react-icons/bi";
 
 

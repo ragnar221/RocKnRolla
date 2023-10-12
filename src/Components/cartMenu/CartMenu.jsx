@@ -17,7 +17,7 @@ import {
   SubtotalStyled,
   TitleStyled,
   TotalStyled,
-} from "../cartMenu/CartMenuStyle.js";
+} from "./cartMenuStyle.js";
 import { CgCloseR } from "react-icons/cg";
 import { TbShoppingCartX } from "react-icons/tb";
 import Submit from "../Submit/Submit";

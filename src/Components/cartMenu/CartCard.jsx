@@ -6,7 +6,7 @@ import {
   QuantityContainerStyled,
   TextContainerStyled,
   TextStyled,
-} from "./CartMenuStyle";
+} from "./cartMenuStyle";
 import { formatPrice } from "../../../utils/formatPrice";
 import Increase from "../Increase/Increase";
 import { useDispatch } from "react-redux";
