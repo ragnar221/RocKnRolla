@@ -10,7 +10,8 @@ export const createUser = async (nombre, email, password) => {
         },
         {
             headers: {
-                "Content-Type": "application.json"
+                "Content-Type": "application.json",
+                "Access-Content-Allow-Origin": "application.json"
             },
         });
         console.log(response.data);
