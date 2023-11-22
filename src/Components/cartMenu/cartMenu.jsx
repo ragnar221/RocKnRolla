@@ -75,8 +75,10 @@ const CartMenu = () => {
                   cartItems.map((item) => <CartCard key={item.id} {...item} />)
                 ) : (
                   <p>No hay productos en el carro</p>
-                )}
-                <ButtonContainerStyled>
+                )}  
+              </ProductsWrapperStyled>
+            </MainContainerStyled>
+            <ButtonContainerStyled>
                   {" "}
                   <Submit
                     onClick={() => {
@@ -88,8 +90,6 @@ const CartMenu = () => {
                     Iniciar compra
                   </Submit>
                 </ButtonContainerStyled>
-              </ProductsWrapperStyled>
-            </MainContainerStyled>
             <PriceContainerStyled>
               <SubtotalStyled>
                 <p>Subtotal:</p>

@@ -14,10 +14,13 @@ import { loginInitialValues } from "../../src/Formik/InitialValues";
 import useRedirect from "../../hooks/useRedirect";
 import { loginUser } from "../../src/axios/axiosUser";
 import { setCurrentUser } from "../../redux/user/userSlice";
+import { useDispatch } from "react-redux";
 
 
 const Login = () => {
-  useRedirect("/");
+  const dispatch = useDispatch();
+  useRedirect("/")
+
   return (
     <LoginContainerStyled>
       <h1>Iniciar sesion</h1>

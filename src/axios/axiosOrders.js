@@ -1,10 +1,10 @@
-import axios from "react-axios"
-import { createOrderFail, getOrdersFail, getOrdersStart, getOrdersSuccess } from "../../redux/Orders/OrderActions"
+import axios from "axios"
+import OrdersSlice, { createOrderFail, fetchOrdersFail, fetchOrdersStart, fetchOrdersSuccess } from "../../redux/Orders/OrdersSlice"
 import { BASE_URL } from "../../utils/constants"
 
 export const getOrders = async (dispatch, currentUser) => {
 
-dispatch(getOrdersStart())
+dispatch(fetchOrdersStart())
 console.log(currentUser.token);
 
 try {
@@ -14,16 +14,16 @@ try {
         }
     })
     if (orders) {
-        dispatch(getOrdersSuccess(orders.data.data))
+        dispatch(fetchOrdersSuccess(orders.data.data))
     }
     } catch (error) {
         console.log(error);
-        dispatch(getOrdersFail("wooops! no hay usuario"))
+        dispatch(fetchOrdersFail("wooops! no hay usuario"))
     }
 
 }
 
-const createOrder = async (order, dispatch, currentUser) => {
+export const createOrder = async (order, dispatch, currentUser) => {
     try {
         const responce = await axios.post(`${BASE_URL}orders`, order, {
             headers: {

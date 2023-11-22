@@ -2,13 +2,13 @@ export const checkoutInitialValues = {
     name: "",
     cellphone: "",
     location: "",
-    address: "",
+    address: ""
   };
   
   export const registerInitialValues = {
     name: "",
     email: "",
-    password: "",
+    password: ""
   };
   
   export const loginInitialValues = {

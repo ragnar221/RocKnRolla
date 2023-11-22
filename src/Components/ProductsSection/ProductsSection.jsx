@@ -50,7 +50,7 @@ const ProductsSection = () => {
         <ButtonContainerStyled>
           <ButtonPag
             onClick={() => setLimit((prevLimit) => prevLimit - INITIAL_LIMIT)}
-            secondary="true"
+            /*secondary="true"*/
             disabled={INITIAL_LIMIT === limit}
           >
             -

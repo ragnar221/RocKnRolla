@@ -13,6 +13,15 @@ export const InputContainerStyled = styled.div`
   }
 `;
 
+export const InputLabelStyled = styled.label`
+display: flex;
+margin: 1rem 0;
+flex-direction: column-reverse;
+justify-content: flex-start;
+align-items: flex-start;
+width: 50%;
+`;
+
 export const LoginInputStyled = styled.input`
   width: 300px;
   padding: 1.5rem 2rem;

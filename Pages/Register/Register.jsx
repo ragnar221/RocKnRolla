@@ -27,17 +27,17 @@ const Register = () => {
         onSubmit={async (values, actions) => {
           const user = await createUser(values.name, values.email, values.password);
           actions.resetForm();
-          if (user) {
+          if(user) {
             dispatch(setCurrentUser({
-              ...user.usuario
+              ...user.usuario,
             }))
           }
         }}
       >
         <Form>
-          <LoginInput name="name" type="text" placeholder="Nombre" />
-          <LoginInput name="email" type="text" placeholder="Email" />
-          <LoginInput name="password" type="password" placeholder="Password" />
+          <LoginInput name='name' type="text" placeholder="Nombre" />
+          <LoginInput name='email' type="text" placeholder="Email" />
+          <LoginInput name='password' type="password" placeholder="Password" />
           <Submit>Registrarse</Submit>
           <Link to="/Login">
             <Submit style={{ color: "black" }}>Volver al login</Submit>

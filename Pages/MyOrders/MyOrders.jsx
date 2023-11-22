@@ -6,9 +6,10 @@ import {
   MisOrdenesTitle,
   MisOrdenesBtnContainer,
 } from "./MyOrdersStyle";
+import { getOrders } from "../../src/axios/axiosOrders";
 import Submit from "../../src/Components/Submit/Submit";
 import OrdersCard from "./OrdersCard";
-import OrdersSlice from "../../redux/Orders/OrdersSlice";
+import OrdersSlice, { clearError, fetchOrdersFail } from "../../redux/Orders/OrdersSlice";
 import { Divisor, BannerWrapper } from "../../src/Components/outstandingBanner/OutstandingBannerStyle";
 const MyOrders = () => {
   const navigate = useNavigate();
@@ -19,15 +20,15 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (!orders) {
-      dispatch(OrdersSlice.fetchOrdersSuccess(currentUser?.id));
+      getOrders( dispatch, currentUser)
     }
 
-    if (!currentUser?.id) {
-      dispatch(OrdersSlice.fetchOrdersFail());
+    if (!currentUser?.token) {
+      dispatch(fetchOrdersFail());
     } else {
-      error && dispatch(OrdersSlice.clearError());
+      error && dispatch(clearError());
     }
-  }, [dispatch, currentUser?.id, orders, error]);
+  }, [dispatch, currentUser, orders, error]);
   return (
     <>
       <MisOrdenesContainer>

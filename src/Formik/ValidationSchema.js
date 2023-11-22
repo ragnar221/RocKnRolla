@@ -1,5 +1,5 @@
 import * as Yup from "yup";
-import { regEmail } from "../../utils/regExp";
+
 
 export const checkoutValidationSchema = Yup.object({
   name: Yup.string().required('Campo Requerido'),

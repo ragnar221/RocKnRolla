@@ -45,8 +45,6 @@ const Blog = ({ id }) => {
           <WorkshopImg src="https://res.cloudinary.com/dfpp4mriw/image/upload/v1697048279/workshop_ns2zau.jpg" alt="taller" />
       </ContainerTips>
       <ContainerRecetas>
-        <RecipePaper square>
-        </RecipePaper>
       </ContainerRecetas>
     </BlogWrapper>
   );
