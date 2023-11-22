@@ -1,3 +1,3 @@
 export const INITIAL_LIMIT = 3;
 export const SHIPPING_COST = 500;
-export const BASE_URL = 'http://rocknrolla.vercel.app/';
+export const BASE_URL = 'https://rocknrolla.vercel.app/';
