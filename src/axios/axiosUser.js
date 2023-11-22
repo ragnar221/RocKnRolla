@@ -7,6 +7,11 @@ export const createUser = async (nombre, email, password) => {
             nombre,
             email,
             password
+        },
+        {
+            headers: {
+                "Content-Type": "rocknrolla.json"
+            },
         });
         console.log(response.data);
         return response.data;
