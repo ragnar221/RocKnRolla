@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { OfertasContainer } from "./OffersStyle";
 import CardOfertas from "./OfferCards";
+import { Products } from "../../../Data/Products";
+
 
 const Offers = () => {
   const ofertas = useSelector((state) => state.ofertas.ofertas);

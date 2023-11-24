@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { Formik, useFormik } from "formik";
 import React from "react";
 import LoginInput from "../../src/Components/LoginForm/LoginInput";
 import {
@@ -11,13 +11,15 @@ import Submit from "../../src/Components/Submit/Submit";
 import { Link } from "react-router-dom";
 import { loginValidationSchema } from "../../src/Formik/ValidationSchema";
 import { loginInitialValues } from "../../src/Formik/InitialValues";
-import useRedirect from "../../hooks/useRedirect";
-import { loginUser } from "../../src/axios/axiosUser";
-import { setCurrentUser } from "../../redux/user/userSlice";
+import { setCurrentUser, toggleHiddenMenu } from "../../redux/user/userSlice";
+import * as emailValidator from "email-validator"
 import { useDispatch } from "react-redux";
+import useRedirect from "../../hooks/useRedirect";
 
 
-const Login = () => {
+
+export const Login = () => {
+
   const dispatch = useDispatch();
   useRedirect("/")
 
@@ -27,19 +29,23 @@ const Login = () => {
       <Formik
         initialValues={loginInitialValues}
         validationSchema={loginValidationSchema}
-        onSubmit={async (values) => {
-            const user = await loginUser(values.email, values.password)
-           if (user) {
-            dispatch(setCurrentUser({
-              ...user.usuario,
-              token: user.token
-            }))
-           }
+        validateOnChange={true}
+        onSubmit={(values, {resetForm}) => {
+            console.log(values, "logging in");
+            const userLog = (values.email, values.password)
+            resetForm();
+            if (userLog) {
+              dispatch(setCurrentUser({
+                ...userLog.usuario,
+                token: userLog.token
+              }))
+            }
          }}
       >
+        {({touched, errors}) => (
         <Form>
-          <LoginInput name="email" type="text" placeholder="Email" />
-          <LoginInput name="password" type="password" placeholder="Password" />
+          <LoginInput name="email" type="text" placeholder="Email" isError={errors.email && touched.email} />
+          <LoginInput name="password" type="password" placeholder="Password" isError={errors.password && touched.password} />
           <Link to="/recuperarpassword">
             <LoginPasswordStyled>
               ¿Olvidaste la contraseña? Reestablecela
@@ -50,6 +56,8 @@ const Login = () => {
             <LoginEmailStyled>¿No tenes cuenta? Crea una</LoginEmailStyled>
           </Link>
         </Form>
+        )
+      }
       </Formik>
     </LoginContainerStyled>
   );

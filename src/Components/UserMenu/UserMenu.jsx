@@ -7,12 +7,13 @@ import {
 } from "./UserMenuStyles";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import userSlice from "../../../redux/user/userSlice";
+import userSlice, { setCurrentUser, toggleHiddenMenu } from "../../../redux/user/userSlice";
 import {
   CloseButtonContainerStyled,
   CloseButtonStyled,
 } from "../cartMenu/cartMenuStyle";
 import { BiLogIn } from "react-icons/bi";
+import Login from "../../../Pages/Login/Login";
 
 
 const UserMenu = () => {
@@ -45,7 +46,7 @@ const UserMenu = () => {
               X
             </CloseButtonStyled>
           </CloseButtonContainerStyled>
-          <UsernameStyled>{`Hola ${currentUser}`}</UsernameStyled>
+          <UsernameStyled>{`Hola ${currentUser.name}`}</UsernameStyled>
           {currentUser?.photoURL ? (
             <UserImageStyled src={currentUser.photoURL} alt="Foto" />
           ) : (
@@ -63,9 +64,10 @@ const UserMenu = () => {
             </h5>
           </LinkStyled>
           <span
-            onClick={() =>
-              auth.signOut().then(dispatch(userSlice.toggleHiddenMenu()))
-            
+            onClick={() =>{
+              dispatch(null)
+              dispatch(toggleHiddenMenu())
+             }
             }
           >
             Cerrar Sesion

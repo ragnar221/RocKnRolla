@@ -14,7 +14,7 @@ import { formatPrice } from "../../../utils/formatPrice";
 import { cartActions } from "../../../redux/cart/cartActions";
 import { useDispatch } from "react-redux";
 
-const CardOfertas = ({ img, name, price, info, id }) => {
+const CardOfertas = ({ img, name, price, id }) => {
   const dispatch = useDispatch();
   return (
     <OfertaCardContainer>

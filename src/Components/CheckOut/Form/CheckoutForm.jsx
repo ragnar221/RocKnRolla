@@ -11,8 +11,8 @@ import { checkoutInitialValues } from "../../../Formik/InitialValues";
 import { checkoutValidationSchema } from "../../../Formik/ValidationSchema";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import OrdersSlice from "../../../../redux/Orders/OrdersSlice";
-import { cartActions } from "../../../../redux/cart/cartActions";
+import OrdersSlice, { clearOrders } from "../../../../redux/Orders/OrdersSlice";
+import { cartActions, clearCart } from "../../../../redux/cart/cartActions";
 import Loader from "../../Loader/Loader";
 import {
   BannerWrapper,
@@ -36,7 +36,7 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
             validationSchema={checkoutValidationSchema}
             onSubmit={async (values) => {
               const orderData = {
-                cartItems,
+                items: cartItems,
                 price,
                 shippingCost,
                 total: price + shippingCost,
@@ -46,9 +46,9 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
               };
               console.log({ orderData });
               try {
-                await dispatch(OrdersSlice.createOrder(orderData));
-                navigate("/");
-                dispatch(cartActions.clearCart());
+                await createOrder(orderData, dispatch, currentUser);
+                navigate("/congrats")
+                dispatch(clearCart())
               } catch (error) {
                 alert("Error creando pedido");
               }
@@ -84,7 +84,7 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
                   id="dirección"
                   placeholder="Dirección"
                 ></InputForm>
-                <Submit disabled={!cartItems.length}>
+                <Submit disabled={!cartItems.length || isSubmitting}>
                   {isSubmitting ? <Loader /> : "Iniciar compra"}
                 </Submit>
               </Form>

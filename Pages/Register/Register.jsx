@@ -6,13 +6,14 @@ import {
   LoginContainerStyled,
 } from "./RegisterStyle";
 import { Link } from "react-router-dom";
-import { createUser } from "../../src/axios/axiosUser";
+
 import useRedirect from "../../hooks/useRedirect";
 import { registerInitialValues } from "../../src/Formik/InitialValues";
 import { registerValidationSchema } from "../../src/Formik/ValidationSchema";
 import Submit from "../../src/Components/Submit/Submit";
 import { useDispatch } from "react-redux";
-import { setCurrentUser } from "../../redux/user/userSlice";
+import { setCurrentUser, toggleHiddenMenu } from "../../redux/user/userSlice";
+
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -24,12 +25,13 @@ const Register = () => {
       <Formik
         initialValues={registerInitialValues}
         validationSchema={registerValidationSchema}
-        onSubmit={async (values, actions) => {
-          const user = await createUser(values.name, values.email, values.password);
+        onSubmit={ (values, actions) => {
+          console.log(values, "registrado con exito");
+          const user = (values.name, values.email, values.password)
           actions.resetForm();
-          if(user) {
+          if (user) {
             dispatch(setCurrentUser({
-              ...user.usuario,
+              ...user.usuario
             }))
           }
         }}
