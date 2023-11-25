@@ -18,7 +18,6 @@ import Login from "../../../Pages/Login/Login";
 
 const UserMenu = () => {
   const { currentUser, hiddenMenu } = useSelector((state) => state.user);
-  console.log(currentUser.values.email);
   const dispatch = useDispatch();
   return (
     <AnimatePresence>

@@ -32,8 +32,7 @@ const Register = () => {
           actions.resetForm();
           if (user) {
             dispatch(setCurrentUser({
-              ...user.usuario,
-              token:user.token
+              ...user
             })
             )
           }
