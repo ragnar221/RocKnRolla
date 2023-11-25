@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { loginValidationSchema } from "../../src/Formik/ValidationSchema";
 import { loginInitialValues } from "../../src/Formik/InitialValues";
 import { setCurrentUser, toggleHiddenMenu } from "../../redux/user/userSlice";
-import * as emailValidator from "email-validator"
+
 import { useDispatch } from "react-redux";
 import useRedirect from "../../hooks/useRedirect";
 
@@ -31,20 +31,19 @@ export const Login = () => {
         validationSchema={loginValidationSchema}
         validateOnChange={true}
         onSubmit={(values, {resetForm}) => {
-            console.log(values, "logging in");
-            const userLog = (values.email, values.password)
+          console.log(values, "logging in");
+            const user = (values.email, values.password)
             resetForm();
-            if (userLog) {
+            if (user) {
               dispatch(setCurrentUser({
-                ...userLog.usuario,
-                token: userLog.token
+                values
               }))
             }
          }}
       >
         {({touched, errors}) => (
         <Form>
-          <LoginInput name="email" type="text" placeholder="Email" isError={errors.email && touched.email} />
+          <LoginInput name="email" type="email" placeholder="Email" isError={errors.email && touched.email} />
           <LoginInput name="password" type="password" placeholder="Password" isError={errors.password && touched.password} />
           <Link to="/recuperarpassword">
             <LoginPasswordStyled>

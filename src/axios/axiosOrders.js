@@ -1,16 +1,18 @@
 import axios from "axios"
 import OrdersSlice, { createOrderFail, fetchOrdersFail, fetchOrdersStart, fetchOrdersSuccess } from "../../redux/Orders/OrdersSlice"
 import { BASE_URL } from "../../utils/constants"
+import { useSelector } from "react-redux"
 
 export const getOrders = async (dispatch, currentUser) => {
 
 dispatch(fetchOrdersStart())
-console.log(currentUser.token);
+//const { currentUser, hiddenMenu } = useSelector((state) => state.user);
+console.log(currentUser);
 
 try {
-    const orders = await axios.get(`${BASE_URL}orders`, {
+    const orders = await axios.get(`${BASE_URL}/orders`, {
         headers: {
-            'x-token': currentUser.token
+            'x-token': currentUser
         }
     })
     if (orders) {
@@ -25,9 +27,9 @@ try {
 
 export const createOrder = async (order, dispatch, currentUser) => {
     try {
-        const responce = await axios.post(`${BASE_URL}orders`, order, {
+        const responce = await axios.post(`${BASE_URL}/orders`, order, {
             headers: {
-                'x-token': currentUser.token
+                'x-token': currentUser
             }
         });
 

@@ -5,7 +5,7 @@ import {
   Form,
   LoginContainerStyled,
 } from "./RegisterStyle";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
 
 import useRedirect from "../../hooks/useRedirect";
 import { registerInitialValues } from "../../src/Formik/InitialValues";
@@ -28,11 +28,14 @@ const Register = () => {
         onSubmit={ (values, actions) => {
           console.log(values, "registrado con exito");
           const user = (values.name, values.email, values.password)
+          console.log(user);
           actions.resetForm();
           if (user) {
             dispatch(setCurrentUser({
-              ...user.usuario
-            }))
+              ...user.usuario,
+              token:user.token
+            })
+            )
           }
         }}
       >

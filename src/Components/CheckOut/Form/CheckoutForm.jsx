@@ -9,8 +9,9 @@ import {
 import InputForm from "./InputForm";
 import { checkoutInitialValues } from "../../../Formik/InitialValues";
 import { checkoutValidationSchema } from "../../../Formik/ValidationSchema";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { createOrder } from "../../../axios/axiosOrders";
 import OrdersSlice, { clearOrders } from "../../../../redux/Orders/OrdersSlice";
 import { cartActions, clearCart } from "../../../../redux/cart/cartActions";
 import Loader from "../../Loader/Loader";
@@ -21,6 +22,7 @@ import {
 const CheckoutForm = ({ cartItems, price, shippingCost }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { currentUser, hiddenMenu } = useSelector((state) => state.user);
   return (
     <>
       <CheckoutWrapper2>
@@ -45,6 +47,7 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
                 },
               };
               console.log({ orderData });
+              console.log(currentUser);
               try {
                 await createOrder(orderData, dispatch, currentUser);
                 navigate("/congrats")

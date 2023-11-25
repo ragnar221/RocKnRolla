@@ -11,6 +11,7 @@ const OrdersSlice = createSlice({
     initialState: INITIAL_STATE,
     reducers: {
         createOrderFail: (state = INITIAL_STATE, action) => {
+            console.log(action);
             return {
                 ...state,
                 error: action.payload
