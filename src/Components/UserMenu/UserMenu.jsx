@@ -46,7 +46,7 @@ const UserMenu = () => {
               X
             </CloseButtonStyled>
           </CloseButtonContainerStyled>
-          <UsernameStyled>{`Hola ${currentUser.values.email}`}</UsernameStyled>
+          <UsernameStyled>{`Hola ${currentUser.email}`}</UsernameStyled>
           {currentUser?.photoURL ? (
             <UserImageStyled src={currentUser.photoURL} alt="Foto" />
           ) : (

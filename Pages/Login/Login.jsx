@@ -36,7 +36,7 @@ export const Login = () => {
             resetForm();
             if (user) {
               dispatch(setCurrentUser({
-                ...user
+                ...values
               }))
             }
          }}

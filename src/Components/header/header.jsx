@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
+  console.log(currentUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
@@ -43,7 +44,7 @@ const Header = () => {
               }
             >
               <SpanStyled>
-                {currentUser ? `${currentUser.values.email}` : "Inicia Sesión"}
+                {currentUser ? `${currentUser.email}` : "Inicia Sesión"}
               </SpanStyled>
               {currentUser?.photoURL ? (
                 <UserImageStyled src={currentUser.photoURL} alt="Foto" />
