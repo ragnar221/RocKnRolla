@@ -8,14 +8,7 @@ export const createUser = async (nombre, email, password) => {
             email,
             password
         },
-        {
-            headers: {
-                "Content-Type": "application.json",
-                'Access-Control-Allow-origin':'*',
-                'Access-control-allow-methods':'get, post, put, patch, delete, options',
-                "access-control-allow-credentials": true
-            },
-        });
+        );
         console.log(response.data);
         return response.data;
     } catch (error) {
