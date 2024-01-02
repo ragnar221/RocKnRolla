@@ -12,7 +12,7 @@ export const createUser = async (nombre, email, password) => {
         console.log(response.data);
         return response.data;
     } catch (error) {
-        return alert(error.response.data.errors[0].msg); 
+        return alert("contraseña incorrecta"); 
     }
 }
 
