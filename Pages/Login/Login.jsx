@@ -33,8 +33,7 @@ export const Login = () => {
         validateOnChange={true}
         onSubmit={ async (values) => {
           console.log(values, "logging in");
-            const user = await loginUser (values.email, values.password)
-            resetForm();
+            const user = await loginUser (values.email, values.password);
             if (user) {
               dispatch(setCurrentUser({
                 ...user.usuario,
