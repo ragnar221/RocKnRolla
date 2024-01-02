@@ -7,12 +7,12 @@ export const getOrders = async (dispatch, currentUser) => {
 
 dispatch(fetchOrdersStart())
 //const { currentUser, hiddenMenu } = useSelector((state) => state.user);
-console.log(currentUser);
+console.log(currentUser.token);
 
 try {
     const orders = await axios.get(`${BASE_URL}orders`, {
         headers: {
-            'x-token': currentUser
+            'x-token': currentUser.token
         }
     })
     if (orders) {
@@ -20,7 +20,7 @@ try {
     }
     } catch (error) {
         console.log(error);
-        dispatch(fetchOrdersFail("wooops! no hay usuario"))
+        dispatch(fetchOrdersFail("wooops! no se encontro un usuario"))
     }
 
 }
@@ -29,7 +29,7 @@ export const createOrder = async (order, dispatch, currentUser) => {
     try {
         const responce = await axios.post(`${BASE_URL}orders`, order, {
             headers: {
-                'x-token': currentUser
+                'x-token': currentUser.token
             }
         });
 
