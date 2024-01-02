@@ -44,7 +44,7 @@ const Header = () => {
               }
             >
               <SpanStyled>
-                {currentUser ? `${currentUser.email}` : "Inicia Sesión"}
+                {currentUser ? `${currentUser.nombre}` : "Inicia Sesión"}
               </SpanStyled>
               {currentUser?.photoURL ? (
                 <UserImageStyled src={currentUser.photoURL} alt="Foto" />

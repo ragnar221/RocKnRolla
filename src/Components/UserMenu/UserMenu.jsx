@@ -48,7 +48,7 @@ const UserMenu = () => {
           </LinkStyled>
           <span
             onClick={() =>{
-              dispatch(null)
+              dispatch(setCurrentUser(null))
               dispatch(toggleHiddenMenu())
              }
             }
