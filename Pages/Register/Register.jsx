@@ -13,6 +13,7 @@ import { registerValidationSchema } from "../../src/Formik/ValidationSchema";
 import Submit from "../../src/Components/Submit/Submit";
 import { useDispatch } from "react-redux";
 import { setCurrentUser, toggleHiddenMenu } from "../../redux/user/userSlice";
+import { createUser } from "../../src/axios/axiosUser";
 
 
 const Register = () => {
@@ -25,14 +26,13 @@ const Register = () => {
       <Formik
         initialValues={registerInitialValues}
         validationSchema={registerValidationSchema}
-        onSubmit={ (values, actions) => {
+        onSubmit={ async (values, actions) => {
           console.log(values, "registrado con exito");
-          const user = (values.name, values.email, values.password)
-          console.log(user);
+          const user = await createUser (values.name, values.email, values.password);
           actions.resetForm();
           if (user) {
             dispatch(setCurrentUser({
-              ...user
+              ...user.usuario
             })
             )
           }

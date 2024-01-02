@@ -19,7 +19,7 @@ export const HomeWrapper = styled.div`
   @media only screen and (max-width: 624px) {
     max-width: 100%;
   }
-  @media only screen and (max-width: 1000px) and (min-width: 624px) {
+  @media only screen and (max-width: 1200px) and (min-width: 624px) {
     max-width: 100%;
   }
 `;
@@ -49,7 +49,7 @@ export const DivVisit = styled.div`
   @media only screen and (max-width: 624px) {
     flex-direction: column;
   }
-  @media only screen and (max-width: 1000px) and (min-width: 624px) {
+  @media only screen and (max-width: 1200px) and (min-width: 624px) {
   }
 `;
 export const ButtonVisit = styled.button`

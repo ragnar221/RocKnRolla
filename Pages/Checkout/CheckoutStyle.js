@@ -1,10 +1,13 @@
 import styled from "styled-components";
 export const CheckoutWrapper = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   margin-top: 3rem;
   width: 90vw;
   gap: 1rem;
   margin-bottom: 1rem;
+  
 
   @media only screen and (max-width: 624px) {
     flex-direction: column;

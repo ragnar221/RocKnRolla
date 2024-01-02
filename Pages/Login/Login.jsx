@@ -15,6 +15,7 @@ import { setCurrentUser, toggleHiddenMenu } from "../../redux/user/userSlice";
 
 import { useDispatch } from "react-redux";
 import useRedirect from "../../hooks/useRedirect";
+import { loginUser } from "../../src/axios/axiosUser";
 
 
 
@@ -30,13 +31,14 @@ export const Login = () => {
         initialValues={loginInitialValues}
         validationSchema={loginValidationSchema}
         validateOnChange={true}
-        onSubmit={(values, {resetForm}) => {
+        onSubmit={ async (values) => {
           console.log(values, "logging in");
-            const user = (values.email, values.password)
+            const user = await loginUser (values.email, values.password)
             resetForm();
             if (user) {
               dispatch(setCurrentUser({
-                ...values
+                ...user.usuario,
+                token: user.token
               }))
             }
          }}

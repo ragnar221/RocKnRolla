@@ -29,7 +29,7 @@ export const OrderPrice = styled.p``;
 
 export const MisOrdenesContainer = styled.div`
   display: flex;
-
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
   margin-bottom: 10rem;

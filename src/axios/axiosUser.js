@@ -1,7 +1,7 @@
 import axios from "axios"
 import { BASE_URL } from "../../utils/constants"
 
-/*export const createUser = async (name, email, password) => {
+export const createUser = async (name, email, password) => {
     try {
         const response = await axios.post(`${BASE_URL}auth/register`, {
             name,
@@ -34,4 +34,4 @@ export const loginUser = async (email, password) => {
         console.log(error);
         return alert(error.response.data.msg);
     }
-}*/
+}
