@@ -50,8 +50,10 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
               console.log(currentUser);
               try {
                 await createOrder(orderData, dispatch, currentUser);
-                navigate("/congrats")
-                dispatch(clearCart())
+                if(createOrder){
+                  navigate("/congrats")
+                  dispatch(clearCart())
+                }  
               } catch (error) {
                 alert("Error creando pedido");
               }

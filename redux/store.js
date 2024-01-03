@@ -1,6 +1,5 @@
 
 import { persistStore } from "redux-persist";
-import rootReducer from "./rootReducer";
 import thunk from "redux-thunk";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import offersReducer from "./Offers/OffersReducer";
@@ -11,6 +10,7 @@ import userSlice from "./user/userSlice";
 import OrdersSlice from "./Orders/OrdersSlice";
 import recipesReducer from "./recipes/recipesReducer";
 import persistReducer from "redux-persist/es/persistReducer";
+import storage from "redux-persist/lib/storage";
 
 
 const rootReducer = combineReducers({
@@ -25,7 +25,7 @@ const rootReducer = combineReducers({
 
 const persistConfig = {
   key: "root",
-  storage: storage,
+  storage,
   whitelist: ["cart", "user"],
 };
 
