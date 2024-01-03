@@ -48,10 +48,10 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
               };
               try {
                 await createOrder(orderData, dispatch, currentUser);
-                if(createOrder){
+                
                   navigate("/congrats")
                   dispatch(clearCart())
-                }  
+                 
               } catch (error) {
                 alert("Error creando pedido");
               }
