@@ -1,8 +1,7 @@
 import axios from "axios"
 import OrdersSlice, { createOrderFail, fetchOrdersFail, fetchOrdersStart, fetchOrdersSuccess } from "../../redux/Orders/OrdersSlice"
 import { BASE_URL } from "../../utils/constants"
-import { useSelector } from "react-redux"
-import { string } from "yup"
+
 
 export const getOrders = async (dispatch, currentUser) => {
 
@@ -30,7 +29,6 @@ export const createOrder = async (order, dispatch, currentUser) => {
     try {
         const responce = await axios.post(`${BASE_URL}orders`, order, {
             headers: {
-                'Access-Control-Allow-Origin':currentUser.token,
                 'x-token': currentUser.token
             }
         });
