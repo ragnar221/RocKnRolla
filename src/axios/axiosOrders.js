@@ -10,7 +10,7 @@ dispatch(fetchOrdersStart())
 console.log(currentUser.token);
 
 try {
-    const orders = await axios.get(`${BASE_URL}auth/orders`, {
+    const orders = await axios.get(`${BASE_URL}orders`, {
         headers: {
             'x-token': currentUser.token
         }
@@ -27,7 +27,7 @@ try {
 
 export const createOrder = async (order, dispatch, currentUser) => {
     try {
-        const responce = await axios.post(`${BASE_URL}auth/orders`, order, {
+        const responce = await axios.post(`${BASE_URL}orders`, order, {
             headers: {
                 'x-token': currentUser.token
             }
