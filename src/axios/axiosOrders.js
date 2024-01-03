@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 export const getOrders = async (dispatch, currentUser) => {
 
 dispatch(fetchOrdersStart())
-//const { currentUser, hiddenMenu } = useSelector((state) => state.user);
+
 console.log(currentUser.token);
 
 try {

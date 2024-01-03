@@ -15,10 +15,10 @@ import { Divisor, BannerWrapper } from "../../src/Components/outstandingBanner/O
 
 const MyOrders = () => {
   const navigate = useNavigate();
-  const currentUser = useSelector((state) => state.user.currentUser);
-  const { orders, error } = useSelector((state) => state.orders);
-
   const dispatch = useDispatch();
+  const currentUser = useSelector( state => state.user.currentUser)
+  const { orders, error } = useSelector(state => state.orders)
+
 
   useEffect(() => {
     if (!orders) {
@@ -26,11 +26,11 @@ const MyOrders = () => {
     }
 
     if (!currentUser?.token) {
-      dispatch(fetchOrdersFail());
+      dispatch(fetchOrdersFail())
     } else {
-      error && dispatch(clearError());
+      error && dispatch(clearError())
     }
-  }, [dispatch, currentUser, orders, error]);
+  }, [dispatch, currentUser, orders, error])
   return (
     <>
       <MisOrdenesContainer>
