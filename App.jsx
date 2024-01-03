@@ -9,10 +9,10 @@ import Login from "./Pages/Login/Login";
 
 
 function App() {
- const [token,setToken] = useState();
- if (token) {
-  return <Login setToken={setToken} />
- }
+ //const [token,setToken] = useState();
+ //if (token) {
+  //return <Login setToken={setToken} />
+ //}
   return (
     <>
       <Layout>

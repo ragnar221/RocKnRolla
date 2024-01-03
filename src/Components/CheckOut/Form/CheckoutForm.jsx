@@ -22,7 +22,7 @@ import {
 const CheckoutForm = ({ cartItems, price, shippingCost }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { currentUser, hiddenMenu } = useSelector((state) => state.user);
+  const { currentUser } = useSelector(state => state.user);
   return (
     <>
       <CheckoutWrapper2>
@@ -46,8 +46,6 @@ const CheckoutForm = ({ cartItems, price, shippingCost }) => {
                   ...values,
                 },
               };
-              console.log({ orderData });
-              console.log(currentUser);
               try {
                 await createOrder(orderData, dispatch, currentUser);
                 if(createOrder){

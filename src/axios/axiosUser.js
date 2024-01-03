@@ -28,3 +28,17 @@ export const loginUser = async (email, password) => {
         return alert("Los datos ingresados son incorrectos");
     }
 }
+
+export const verifyUser = async (email, code) => {
+    try {
+        const responce = await axios.post(`${BASE_URL}auth/verify`, {
+            email,
+            code
+        });
+        console.log("usuario verificado");
+        return responce.data;
+    } catch(error){
+        console.log(error);
+        return alert(error.responce.data.msg);
+    }
+};

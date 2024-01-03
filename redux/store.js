@@ -29,8 +29,8 @@ const persistConfig = {
   whitelist: ["cart", "user"],
 };
 
-const initialState = {};
-const middleware = [thunk];
+//const initialState = {};
+//const middleware = [thunk];
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
