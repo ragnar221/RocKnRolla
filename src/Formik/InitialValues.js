@@ -19,3 +19,7 @@ export const checkoutInitialValues = {
   export const forgotPasswordInitialValues = {
     email: "",
   };
+
+  export const UserValidationInitialValues = {
+    code: "",
+  };

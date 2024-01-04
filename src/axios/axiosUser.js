@@ -1,6 +1,7 @@
 import axios from "axios"
 import { BASE_URL } from "../../utils/constants"
 
+
 export const createUser = async (nombre, email, password) => {
     try {
         const response = await axios.post(`${BASE_URL}auth/register`, {
@@ -29,9 +30,9 @@ export const loginUser = async (email, password) => {
     }
 }
 
-export const verifyUser = async (email, code) => {
+export const verifyUser = async ( email, code) => {
     try {
-        const responce = await axios.post(`${BASE_URL}auth/verify`, {
+        const responce = await axios.patch(`${BASE_URL}auth/verify`, {
             email,
             code
         });
@@ -39,6 +40,6 @@ export const verifyUser = async (email, code) => {
         return responce.data;
     } catch(error){
         console.log(error);
-        return alert(error.responce.data.msg);
+        return alert(error.responce.data.errors[0].msg);
     }
 };

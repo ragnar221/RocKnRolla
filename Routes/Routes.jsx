@@ -11,6 +11,8 @@ import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 import Congrats from "../Pages/Congrats/Congrats";
 import Summary from "../Pages/Summary/Summary";
 import Blog from "../Pages/conocenos/conocenos";
+import UserValidation from "../Pages/userValidation/userValidation";
+import Welcome from "../Pages/welcome/welcome";
 
 const Routes = () => {
   return (
@@ -29,9 +31,11 @@ const Routes = () => {
       />
       <Route path="/misordenes" element={<MyOrders />} />
       <Route path="/congrats" element={<Congrats />} />
-      <Route path="*" element={<PageNotFound />} />
       <Route path="/resumen" element={<Summary />} />
       <Route path="/Blog" element={<Blog />} />
+      <Route path="/userValidation" element={<UserValidation/>}/>
+      <Route path="/Welcome" element={<Welcome/>}/>
+      <Route path="*" element={<PageNotFound />} />
     </ReactDomRoutes>
   );
 };

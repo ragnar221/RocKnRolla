@@ -29,7 +29,8 @@ export const createOrder = async (order, dispatch, currentUser) => {
     try {
         const responce = await axios.post(`${BASE_URL}orders`, order, {
             headers: {
-                'x-token': currentUser.token
+                'x-token': currentUser.token,
+                 
             }
         });
 

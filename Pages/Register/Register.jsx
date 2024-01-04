@@ -18,7 +18,7 @@ import { createUser } from "../../src/axios/axiosUser";
 
 const Register = () => {
   const dispatch = useDispatch();
-  useRedirect("/")
+  useRedirect("/UserValidation")
 
   return (
     <LoginContainerStyled>
