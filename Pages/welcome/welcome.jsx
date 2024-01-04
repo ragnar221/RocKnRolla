@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Submit from '../../src/Components/Submit/Submit';
 import { WelcomeContainer,WelcomeWrapper, WelcomeForm } from './welcomeStyles';
 
 const Welcome = () => {
     const { currentUser } = useSelector(state => state.user);
-    const [activeTab, setActiveTab] = useState('Bienvenido');
 
     
   return (
@@ -14,10 +13,15 @@ const Welcome = () => {
         {currentUser?.verified ? (
             <WelcomeContainer>
                 <h1>Bienvenido {`${currentUser.name}`}</h1>
-                <Submit onClick={Navigate="/Home"} >Ir al Home</Submit>
+                <Link to="/">
+                   <Submit>Ir al Home</Submit>
+                </Link> 
             </WelcomeContainer>
         ): <WelcomeContainer>
             <h1>Valida tu cuenta</h1>
+            <Link to="/userValidation" >
+               <Submit>ir a validacion de cuenta</Submit>
+            </Link>  
         </WelcomeContainer> }
     </WelcomeWrapper>
   )
