@@ -36,7 +36,7 @@ export const verifyUser = async ( email, code) => {
             email,
             code
         });
-        console.log("usuario verificado");
+        console.log("Usuario verificado");
         return responce.data;
     } catch(error){
         console.log(error);
