@@ -6,7 +6,6 @@ import { WelcomeContainer,WelcomeWrapper, WelcomeForm } from './welcomeStyles';
 
 const Welcome = () => {
     const { currentUser } = useSelector(state => state.user);
-    Navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('Bienvenido');
 
     
