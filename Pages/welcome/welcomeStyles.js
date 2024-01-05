@@ -2,11 +2,18 @@ import styled from "styled-components";
 
 export const WelcomeWrapper = styled.div`
 display: flex;
+justify-content: center;
 margin-top: 8rem;
 text-align: center;
+height: 100vh;
 `;
 
-export const WelcomeContainer = styled.div``;
+export const WelcomeContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10rem;
+`;
 
 export const WelcomeForm = styled.form`
 flex-direction: column;

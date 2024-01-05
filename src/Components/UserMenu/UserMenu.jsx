@@ -14,6 +14,8 @@ import {
 } from "../cartMenu/cartMenuStyle";
 import { BiLogIn } from "react-icons/bi";
 import Login from "../../../Pages/Login/Login";
+import { Link } from "react-router-dom";
+import Submit from "../Submit/Submit";
 
 
 const UserMenu = () => {
@@ -30,11 +32,13 @@ const UserMenu = () => {
           key="cart-user"
         >
           <UsernameStyled>{`Hola ${currentUser.email}`}</UsernameStyled>
-          {currentUser?.photoURL ? (
-            <UserImageStyled src={currentUser.photoURL} alt="Foto" />
-          ) : (
+                <Link to="/userValidation">
+                   <Submit>valida tu cuenta</Submit>
+                </Link>
+           :
+            (
             <BiLogIn />
-          )}
+          )
           <LinkStyled to="/misordenes">
             <h5
               style={{

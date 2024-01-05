@@ -6,7 +6,8 @@ export const CheckoutWrapper = styled.div`
   margin-top: 3rem;
   width: 90vw;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 10rem;
+  height: 65.1vh;
   
 
   @media only screen and (max-width: 624px) {

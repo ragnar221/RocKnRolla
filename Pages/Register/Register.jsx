@@ -12,7 +12,7 @@ import { registerInitialValues } from "../../src/Formik/InitialValues";
 import { registerValidationSchema } from "../../src/Formik/ValidationSchema";
 import Submit from "../../src/Components/Submit/Submit";
 import { useDispatch } from "react-redux";
-import { setCurrentUser, toggleHiddenMenu } from "../../redux/user/userSlice";
+import { setCurrentUser} from "../../redux/user/userSlice";
 import { createUser } from "../../src/axios/axiosUser";
 
 

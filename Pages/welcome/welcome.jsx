@@ -12,7 +12,7 @@ const Welcome = () => {
     <WelcomeWrapper>
         {currentUser?.verified ? (
             <WelcomeContainer>
-                <h1>Bienvenido {`${currentUser.name}`}</h1>
+                <h1>Bienvenido {`${currentUser.nombre}`}</h1>
                 <Link to="/">
                    <Submit>Ir al Home</Submit>
                 </Link> 

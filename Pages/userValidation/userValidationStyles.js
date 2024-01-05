@@ -7,7 +7,8 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 gap:6rem;
-margin-top: 18rem;
+margin-top: -21.4rem;
+height: 100vh;
 `;
 
 export const Form = styled(FormikForm)`

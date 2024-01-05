@@ -21,7 +21,8 @@ const UserValidation = () => {
             try{
                 if(currentUser) {
                     if(currentUser.verified) {
-                        navigate('heroCheck');
+                        navigate('/Welcome');
+                        return;
                     }
                 }
                 handleVerification();
@@ -42,7 +43,7 @@ const UserValidation = () => {
             try {
                 await verifyUser(currentUser.email, values.code);
                 dispatch(setVerifiedUser());
-                navigate('/Welcome');
+                navigate("/Welcome");
             } catch(error){
                 console.log("Error durante la validación", error);
             }
