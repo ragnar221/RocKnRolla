@@ -42,7 +42,7 @@ const MyOrders = () => {
 
         <OrdersCard />
         <MisOrdenesBtnContainer>
-          <Submit onClick={() => navigate("/")}>Volver a comprar</Submit>
+          <Submit onClick={() => navigate("/Resumen")}>Volver a comprar</Submit>
         </MisOrdenesBtnContainer>
       </MisOrdenesContainer>
     </>

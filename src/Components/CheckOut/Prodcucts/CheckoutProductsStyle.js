@@ -30,8 +30,9 @@ export const CardsWrapperStyled = styled.div`
   position: relative;
   top: 1rem;
   width: 80%;
-  height: 480px;
+  height: 490px;
   margin: 0 auto;
+  margin-top: 5rem;
 
   overflow: scroll;
 

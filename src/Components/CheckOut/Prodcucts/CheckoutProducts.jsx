@@ -25,7 +25,6 @@ const CheckoutProducts = ({ cartItems, shippingCost, price }) => {
           ))
         ) : (
           <>
-            <p>¡Compra tus bebidas favoritas!</p>
             <Link />
           </>
         )}

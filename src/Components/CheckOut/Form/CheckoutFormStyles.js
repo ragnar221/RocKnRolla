@@ -27,11 +27,11 @@ export const Form = styled(FormikForm)`
   align-items: center;
   justify-content: center;
   /* align-items: center; */
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 2rem;
+  flex-direction: column;
   width: 60%;
+  margin-top: 5rem;
   @media only screen and (max-width: 624px) {
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;

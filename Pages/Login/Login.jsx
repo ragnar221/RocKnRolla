@@ -8,7 +8,7 @@ import {
   LoginEmailStyled,
 } from "./LoginStyle";
 import Submit from "../../src/Components/Submit/Submit";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { loginValidationSchema } from "../../src/Formik/ValidationSchema";
 import { loginInitialValues } from "../../src/Formik/InitialValues";
 import { setCurrentUser, toggleHiddenMenu } from "../../redux/user/userSlice";
@@ -46,7 +46,7 @@ export const Login = () => {
         <Form>
           <LoginInput name="email" type="email" placeholder="Email" isError={errors.email && touched.email} />
           <LoginInput name="password" type="password" placeholder="Password" isError={errors.password && touched.password} />
-          <Link to="/recuperarpassword">
+          <Link to="/RecoverPassword">
             <LoginPasswordStyled>
               ¿Olvidaste la contraseña? Reestablecela
             </LoginPasswordStyled>

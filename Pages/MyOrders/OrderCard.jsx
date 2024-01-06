@@ -9,21 +9,16 @@ import {
 } from "./MyOrdersStyle";
 import { formatPrice } from "../../utils/formatPrice";
 import { formatDate } from "../../utils/formatDate";
-import { Timestamp } from "firebase/firestore";
 
-const MyOrderCard = ({ createdAt, total, id }) => {
+
+const MyOrderCard = ({ createdAt, total, _id }) => {
   const navigate = useNavigate();
 
-  const createOrderAt = new Timestamp(
-    createdAt.seconds,
-    createdAt.nanoseconds
-  ).toDate();
-  console.log(createOrderAt);
   return (
-    <OrderCard onClick={() => navigate(`/resumen/${id}`)}>
+    <OrderCard onClick={() => navigate(`/resumen/${_id}`)}>
       <OrderInfoContainer>
-        <OrderTitle>ID de la orden: #{id.slice(0, 7)}</OrderTitle>
-        <OrderId>Fecha {formatDate(createOrderAt)}hs</OrderId>
+        <OrderTitle>ID de la orden: #{_id}</OrderTitle>
+        <OrderId>Fecha {formatDate(createdAt)}hs</OrderId>
         <OrderPrice>{formatPrice(total)}</OrderPrice>
       </OrderInfoContainer>
     </OrderCard>

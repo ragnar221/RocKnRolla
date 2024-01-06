@@ -43,3 +43,17 @@ export const verifyUser = async ( email, code) => {
         return alert(error.responce.data.errors[0].msg);
     }
 };
+
+export const recoverPassword = async ( code, email) => {
+    try {
+        const responce = await axios.patch(`${BASE_URL}auth/recover`, {
+            email,
+            code
+        });
+        console.log("Contraseña reemplazada con exito");
+        return responce.data;
+    } catch(error) {
+        console.log(error);
+        return alert(error.responce.data.errors[0].msg);
+    }
+};
