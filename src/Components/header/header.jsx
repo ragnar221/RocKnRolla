@@ -17,6 +17,7 @@ import UserMenu from "../UserMenu/UserMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { setCurrentUser } from "../../../redux/user/userSlice";
 
 const Header = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -46,11 +47,6 @@ const Header = () => {
               <SpanStyled>
                 {currentUser ? `${currentUser.nombre}` : "Inicia Sesión"}
               </SpanStyled>
-              {currentUser?.photoURL ? (
-                <UserImageStyled src={currentUser.photoURL} alt="Foto" />
-              ) : (
-                <BiLogIn style={{ color: "white" }} />
-              )}
             </UserContainerStyled>
           </UserNavStyled>
           {/* </Link> */}

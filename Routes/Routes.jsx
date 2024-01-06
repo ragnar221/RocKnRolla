@@ -14,7 +14,7 @@ import Blog from "../Pages/conocenos/conocenos";
 import UserValidation from "../Pages/userValidation/userValidation";
 import Welcome from "../Pages/welcome/welcome";
 import RecoverPassword from "../Pages/RecoverPassword/recoverPassword";
-import Resumen from "../Pages/resumen/resumen";
+
 
 const Routes = () => {
   return (
@@ -32,7 +32,6 @@ const Routes = () => {
         }
       />
       <Route path="/misordenes" element={<MyOrders />} />
-      <Route path="/resumen" element={<Resumen/>} />
       <Route path="/congrats" element={<Congrats />} />
       <Route path="/resumen" element={<Summary />} />
       <Route path="/Blog" element={<Blog />} />

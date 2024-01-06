@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styledfrom, { styled } from "styled-components";
 
-export const resumenWrapperStyled = styled.div`
+export const ResumenWrapperStyled = styled.div`
 padding: 2rem, 7rem;
 width: 100%;
 height: 100vh;
@@ -9,41 +9,36 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+gap: 5px;
 `;
 
-export const resumenTitleStyled = styled.div`
+export const ResumenTitleStyled = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: space-between;
 align-items: center;
+gap: 4rem;
 `;
 
-export const linkStyled = styled(Link)`
+export const LinkStyled = styled(Link)`
 padding: 0.8rem, 1.5rem;
 outline: none;
 border: none;
 border-radius: 4px;
 background-color: black;
 text-transform: uppercase;
-font-weight: 400;
+font-weight: 700;
 cursor: pointer;
-
-& span {
-    font-weight: 700;
-    font-size: 1rem;
-    background-color: burlywood;
-    -webkit-background-clip: text;
-    color: transparent;
-}
 `;
 
-export const productsContainerStyled = styled.div`
+export const ProductsContainerStyled = styled.div`
  display: flex;
   flex-wrap: wrap;
   gap: 20px;
   flex-wrap: wrap;
 `;
 
-export const hrStyled = styled.hr`
+export const HrStyled = styled.hr`
 margin: 4rem 0;
 `;
 
@@ -54,19 +49,19 @@ width: 500px;
   flex-wrap: wrap;
 `;
 
-export const productCostStyled = styled.div`
+export const ProductCostStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-export const shipmentCostStyled = styled.div`
+export const ShipmentCostStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-export const totalCostStyled = styled.div`
+export const TotalCostStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

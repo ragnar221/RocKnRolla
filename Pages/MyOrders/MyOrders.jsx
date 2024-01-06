@@ -11,6 +11,7 @@ import Submit from "../../src/Components/Submit/Submit";
 import OrdersCard from "./OrdersCard";
 import OrdersSlice, { clearError, fetchOrdersFail } from "../../redux/Orders/OrdersSlice";
 import { Divisor, BannerWrapper } from "../../src/Components/outstandingBanner/OutstandingBannerStyle";
+import OrdersCards from "./ordersCards";
 
 
 const MyOrders = () => {
@@ -31,6 +32,9 @@ const MyOrders = () => {
       error && dispatch(clearError())
     }
   }, [dispatch, currentUser, orders, error])
+    if(!currentUser) {
+      navigate("/")
+    }
   return (
     <>
       <MisOrdenesContainer>
@@ -42,7 +46,7 @@ const MyOrders = () => {
 
         <OrdersCard />
         <MisOrdenesBtnContainer>
-          <Submit onClick={() => navigate("/Resumen")}>Volver a comprar</Submit>
+          <Submit onClick={() => navigate("/")}>Volver a comprar</Submit>
         </MisOrdenesBtnContainer>
       </MisOrdenesContainer>
     </>

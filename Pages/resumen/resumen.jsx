@@ -1,12 +1,12 @@
-import { resumenWrapperStyled,
-         resumenTitleStyled, 
+import { ResumenWrapperStyled,
+         ResumenTitleStyled, 
          ResumenInfoStyled, 
-         linkStyled, 
-         productsContainerStyled, 
-         hrStyled, 
-         productCostStyled, 
-         totalCostStyled, 
-         shipmentCostStyled } from './resumenStyle';
+         LinkStyled, 
+         ProductsContainerStyled, 
+         HrStyled, 
+         ProductCostStyled, 
+         TotalCostStyled, 
+         ShipmentCostStyled } from './resumenStyle';
 import ResumenCard from '../../src/Components/resumenCard/resumenCard';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -32,35 +32,35 @@ const Resumen = () => {
 
       console.log(visitedOrder);
   return (
-    <resumenWrapperStyled>
-        <resumenTitleStyled>
+    <ResumenWrapperStyled>
+        <ResumenTitleStyled>
             <h1>resumen de la order: #{visitedOrder?.id.slice(0.7)}</h1>
             <Link to="/misOrdenes" >volver a mis ordenes</Link>
-        </resumenTitleStyled>
+        </ResumenTitleStyled>
         <h2>productos</h2>
-        <productsContainerStyled>
+        <ProductsContainerStyled>
             {visitedOrder?.items.map((item) => {
                 return <ResumenCard key={item._id} {...item} />
             })
             }
-        </productsContainerStyled>
-        <hrStyled/>
+        </ProductsContainerStyled>
+        <HrStyled/>
         <ResumenInfoStyled>
             <p>costos</p>
-            <productCostStyled>
+            <ProductCostStyled>
                 <p>costo de productos</p>
                 <span>{formatPrice(visitedOrder?.price)}</span>
-            </productCostStyled>
-            <shipmentCostStyled>
+            </ProductCostStyled>
+            <ShipmentCostStyled>
                 <p>costo de envio</p>
                 <span>{formatPrice(visitedOrder?.shippingCost)}</span>
-            </shipmentCostStyled>
-            <totalCostStyled>
+            </ShipmentCostStyled>
+            <TotalCostStyled>
                 <p>costo total</p>
                 <span>{formatPrice(visitedOrder?.total)}</span>
-            </totalCostStyled>
+            </TotalCostStyled>
         </ResumenInfoStyled>
-    </resumenWrapperStyled>
+    </ResumenWrapperStyled>
   );
 };
 

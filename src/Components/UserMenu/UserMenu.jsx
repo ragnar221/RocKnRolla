@@ -35,10 +35,7 @@ const UserMenu = () => {
                 <Link to="/userValidation">
                    <Submit>valida tu cuenta</Submit>
                 </Link>
-           :
-            (
-            <BiLogIn />
-          )
+           
           <LinkStyled to="/misordenes">
             <h5
               style={{

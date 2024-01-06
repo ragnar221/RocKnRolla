@@ -19,7 +19,7 @@ const MyOrderCard = ({ createdAt, total, _id }) => {
       <OrderInfoContainer>
         <OrderTitle>ID de la orden: #{_id}</OrderTitle>
         <OrderId>Fecha {formatDate(createdAt)}hs</OrderId>
-        <OrderPrice>{formatPrice(total)}</OrderPrice>
+        <OrderPrice>Total {formatPrice(total)}</OrderPrice>
       </OrderInfoContainer>
     </OrderCard>
   );

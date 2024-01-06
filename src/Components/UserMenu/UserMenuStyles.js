@@ -28,6 +28,7 @@ export const ModalContainerStyled = styled(motion.div)`
   align-items: center;
   flex-direction: column;
   opacity: 98%;
+  gap: 2rem;
 
   & span {
     display: flex;
@@ -83,7 +84,7 @@ export const SpanStyled = styled.span`
 export const UsernameStyled = styled.h2`
   font-weight: 400;
   position: relative;
-  top: -2rem;
+  top: -1rem;
 `;
 export const LinkStyled = styled(Link)`
   color: black;
