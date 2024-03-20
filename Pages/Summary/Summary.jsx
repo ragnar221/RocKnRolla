@@ -30,10 +30,10 @@ const Summary = () => {
 
   useEffect(() => {
     if (!orders) {
-      dispatch(OrdersSlice.getFullOrders(currentUser?.id));
+      dispatch(OrdersSlice.getFullOrders(currentUser?._id));
     }
 
-    setVisitedOrder(orders?.find((order) => order.id === orderId));
+    setVisitedOrder(orders?.find((order) => order._id === orderId));
   }, [orderId, currentUser?.id, orders, dispatch]);
 
   return (

@@ -6,7 +6,7 @@ import Submit from '../../src/Components/Submit/Submit';
 import { ValidationContainer,Form } from './userValidationStyles';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserValidationSchema } from '../../src/Formik/ValidationSchema';
-import { setCurrentUser, setVerifiedUser } from '../../redux/user/userSlice';
+import { setCurrentUser, setVerifiedUser } from '../../redux/user/userActions';
 import { UserValidationInitialValues } from '../../src/Formik/InitialValues';
 import { verifyUser } from '../../src/axios/axiosUser';
 

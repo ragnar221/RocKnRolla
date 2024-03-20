@@ -1,35 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { SET_CURRENT_USER, SET_VERIFIED_USER, TOOGLE_MENU_HIDDEN } from "./userActions";
 
 const INITIAL_STATE = {
     currentUser: null,
     hiddenMenu: true,
 };
 
-const userSlice = createSlice({
-    name: "user",
-    initialState: INITIAL_STATE,
-    reducers: {
-        setCurrentUser: (state, action) => {
+const userSlice = (state = INITIAL_STATE, action) => {
+    switch (action.type) {
+        case TOOGLE_MENU_HIDDEN:
+          return {
+            ...state,
+            hiddenMenu: !state.hiddenMenu,
+          };
+        case SET_CURRENT_USER:
+          return {
+            ...state,
+            currentUser: action.payload,
+          };
+          case SET_VERIFIED_USER:
             return {
                 ...state,
                 currentUser: action.payload,
             };
-        },
-        setVerifiedUser: state => {
-            if (state.currentUser) {
-                state.currentUser.verified = true;
-            };
-        },
-
-        toggleHiddenMenu: (state) => {
-            return {
-                ...state,
-                hiddenMenu: !state.hiddenMenu,
-            };
-        },
-    },
-});
-
-export const { setCurrentUser, setVerifiedUser, toggleHiddenMenu } = userSlice.actions;
-
-export default userSlice.reducer;
+        default:
+          return state;
+      }
+    };
+    
+    export default userSlice;

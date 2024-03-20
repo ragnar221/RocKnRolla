@@ -36,7 +36,7 @@ const Routes = () => {
       <Route path="/resumen" element={<Summary />} />
       <Route path="/Blog" element={<Blog />} />
       <Route path="/userValidation" element={<UserValidation/>}/>
-      <Route path="/Welcome" element={<Welcome/>}/>
+      <Route path="/welcome" element={<Welcome/>}/>
       <Route path="/RecoverPassword" element={<RecoverPassword/>}/>
       <Route path="*" element={<PageNotFound />} />
     </ReactDomRoutes>

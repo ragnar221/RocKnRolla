@@ -9,7 +9,7 @@ import {
 import { getOrders } from "../../src/axios/axiosOrders";
 import Submit from "../../src/Components/Submit/Submit";
 import OrdersCard from "./OrdersCard";
-import OrdersSlice, { clearError, fetchOrdersFail } from "../../redux/Orders/OrdersSlice";
+import OrdersSlice, { clearError, clearOrders, fetchOrdersFail } from "../../redux/Orders/OrdersSlice";
 import { Divisor, BannerWrapper } from "../../src/Components/outstandingBanner/OutstandingBannerStyle";
 import OrdersCards from "./ordersCards";
 
@@ -32,9 +32,7 @@ const MyOrders = () => {
       error && dispatch(clearError())
     }
   }, [dispatch, currentUser, orders, error])
-    if(!currentUser) {
-      navigate("/")
-    }
+    
   return (
     <>
       <MisOrdenesContainer>

@@ -7,21 +7,30 @@ import {
 } from "./UserMenuStyles";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import userSlice, { setCurrentUser, toggleHiddenMenu } from "../../../redux/user/userSlice";
+import { setCurrentUser, toggleMenuHidden } from "../../../redux/user/userActions";
 import {
   CloseButtonContainerStyled,
   CloseButtonStyled,
 } from "../cartMenu/cartMenuStyle";
 import { BiLogIn } from "react-icons/bi";
 import Login from "../../../Pages/Login/Login";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Submit from "../Submit/Submit";
+import { ModalOverlayStyled } from "../cartMenu/cartMenuStyle";
+import useRedirect from "../../../hooks/useRedirect";
 
 
 const UserMenu = () => {
+
+   const HiddenMenu = useSelector (state => state.UserMenu)
+   const nav = useNavigate();
+
   const { currentUser, hiddenMenu } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   return (
+    <>
+    
+
     <AnimatePresence>
       {!hiddenMenu && (
         <ModalContainerStyled
@@ -31,7 +40,7 @@ const UserMenu = () => {
           transition={{ duration: 0.5 }}
           key="cart-user"
         >
-          <UsernameStyled>{`Hola ${currentUser.email}`}</UsernameStyled>
+          <UsernameStyled>{`Hola ${currentUser.nombre}`}</UsernameStyled>
                 <Link to="/userValidation">
                    <Submit>valida tu cuenta</Submit>
                 </Link>
@@ -48,9 +57,11 @@ const UserMenu = () => {
             </h5>
           </LinkStyled>
           <span
+            
             onClick={() =>{
               dispatch(setCurrentUser(null))
-              dispatch(toggleHiddenMenu())
+              dispatch(toggleMenuHidden())
+              nav("/")
              }
             }
           >
@@ -59,6 +70,7 @@ const UserMenu = () => {
         </ModalContainerStyled>
       )}
     </AnimatePresence>
+    </>
   );
 };
 

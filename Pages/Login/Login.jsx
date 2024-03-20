@@ -11,7 +11,7 @@ import Submit from "../../src/Components/Submit/Submit";
 import { Link, Navigate } from "react-router-dom";
 import { loginValidationSchema } from "../../src/Formik/ValidationSchema";
 import { loginInitialValues } from "../../src/Formik/InitialValues";
-import { setCurrentUser, toggleHiddenMenu } from "../../redux/user/userSlice";
+import { setCurrentUser, toggleMenuHidden } from "../../redux/user/userActions";
 
 import { useDispatch } from "react-redux";
 import useRedirect from "../../hooks/useRedirect";
@@ -22,7 +22,7 @@ import { loginUser } from "../../src/axios/axiosUser";
 export const Login = () => {
 
   const dispatch = useDispatch();
-  useRedirect("/")
+  useRedirect("/welcome")
 
   return (
     <LoginContainerStyled>

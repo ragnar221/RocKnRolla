@@ -12,12 +12,12 @@ import Logo from "../Logo/Logo";
 import CartIcon from "../CartIcon/CartIcon";
 import CartMenu from "../cartMenu/cartMenu";
 import { BiLogIn } from "react-icons/bi";
-import userSlice, { toggleHiddenMenu } from "../../../redux/user/userSlice";
+import { toggleMenuHidden, setCurrentUser } from "../../../redux/user/userActions";
 import UserMenu from "../UserMenu/UserMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { setCurrentUser } from "../../../redux/user/userSlice";
+//import { setCurrentUser } from "../../../redux/user/userSlice";
 
 const Header = () => {
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -40,7 +40,7 @@ const Header = () => {
             <UserContainerStyled
               onClick={() =>
                 currentUser ?
-                    dispatch(toggleHiddenMenu())
+                    dispatch(toggleMenuHidden())
                   : navigate("/login")
               }
             >

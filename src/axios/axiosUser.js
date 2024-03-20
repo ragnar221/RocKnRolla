@@ -30,7 +30,7 @@ export const loginUser = async (email, password) => {
     }
 }
 
-export const verifyUser = async ( email, code) => {
+export const verifyUser = async (email ,code) => {
     try {
         const responce = await axios.patch(`${BASE_URL}auth/verify`, {
             email,

@@ -5,20 +5,21 @@ import {
   Form,
   LoginContainerStyled,
 } from "./RegisterStyle";
-import { Link, json } from "react-router-dom";
+import { Link, json, useHref, useNavigate } from "react-router-dom";
 
 import useRedirect from "../../hooks/useRedirect";
 import { registerInitialValues } from "../../src/Formik/InitialValues";
 import { registerValidationSchema } from "../../src/Formik/ValidationSchema";
 import Submit from "../../src/Components/Submit/Submit";
 import { useDispatch } from "react-redux";
-import { setCurrentUser} from "../../redux/user/userSlice";
+import { setCurrentUser} from "../../redux/user/userActions";
 import { createUser } from "../../src/axios/axiosUser";
 
 
 const Register = () => {
   const dispatch = useDispatch();
-  useRedirect("/UserValidation")
+  const nav=useNavigate();
+  useRedirect("/welcome")
 
   return (
     <LoginContainerStyled>
@@ -28,14 +29,10 @@ const Register = () => {
         validationSchema={registerValidationSchema}
         onSubmit={ async (values, actions) => {
           console.log(values, "registrado con exito");
-          const user = await createUser (values.name, values.email, values.password);
+          const user = await createUser(values.name, values.email, values.password);
           actions.resetForm();
           if (user) {
-            dispatch(setCurrentUser({
-              ...user.usuario,
-              token:user.token
-            })
-            )
+            nav("/login")
           }
         }}
       >
