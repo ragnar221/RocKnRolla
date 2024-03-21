@@ -18,10 +18,10 @@ const userSlice = (state = INITIAL_STATE, action) => {
             ...state,
             currentUser: action.payload,
           };
-          case SET_VERIFIED_USER:
-            return {
-                ...state,
-                currentUser: action.payload,
+          case SET_VERIFIED_USER: state => {
+            if(state.currentUser) {
+              state.currentUser.verified = true;
+              }
             };
         default:
           return state;

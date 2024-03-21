@@ -43,14 +43,14 @@ const UserValidation = () => {
             try {
                 await verifyUser(currentUser.email, values.code);
                 dispatch(setVerifiedUser());
-                navigate("/Welcome");
+                navigate("/");
             } catch(error){
                 console.log("Error durante la validación", error);
             }
         }}
         >
           <Form>
-            <LoginInput name="code" type="code" placeholder="Codigo de validación" />
+            <LoginInput name="code" type="text" placeholder="Codigo de validación" />
             <Submit>Completar Validación</Submit>
           </Form>
         </Formik>

@@ -13,5 +13,5 @@ export const toggleMenuHidden = () => ({
 
 export const setVerifiedUser = () => ({
     type: SET_VERIFIED_USER,
-    payload: user,
+    //payload: user,
 });
