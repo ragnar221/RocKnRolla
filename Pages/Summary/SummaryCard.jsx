@@ -16,7 +16,7 @@ const SummaryCard = ({ name, quantity, img, price }) => {
         <h3>{name}</h3>
       </ProductLeftStyled>
       <PriceContainerStyled>
-        <p>{quantity}</p>
+        <p>cantidad: {quantity}</p>
         <ProductPriceStyled>{formatPrice(price)}</ProductPriceStyled>
       </PriceContainerStyled>
     </ProductStyled>
