@@ -18,11 +18,12 @@ import OrdersSlice from "../../redux/Orders/OrdersSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { getOrders } from "../../src/axios/axiosOrders";
 
 const Summary = () => {
   const [visitedOrder, setVisitedOrder] = useState(null);
-  const currentUser = useSelector((state) => state.user.currentUser);
-  const orders = useSelector((state) => state.orders.orders);
+  const {currentUser} = useSelector(state => state.user);
+  const {orders} = useSelector(state => state.orders);
 
   const dispatch = useDispatch();
 
@@ -30,16 +31,17 @@ const Summary = () => {
 
   useEffect(() => {
     if (!orders) {
-      dispatch(OrdersSlice.getFullOrders(currentUser?._id));
+      getOrders(dispatch, currentUser)
     }
 
     setVisitedOrder(orders?.find((order) => order._id === orderId));
-  }, [orderId, currentUser?.id, orders, dispatch]);
+  }, [orderId, currentUser, orders, dispatch]);
+  console.log(visitedOrder);
 
   return (
     <ResumenContainerStyled>
       <ResumenTitleStyled>
-        <h1>Resumen Orden: #{visitedOrder?.id.slice(0, 7)}</h1>
+        <h1>Resumen Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
         <Link to="/misordenes"></Link>
       </ResumenTitleStyled>
       <h2>Productos:</h2>

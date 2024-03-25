@@ -8,6 +8,7 @@ export const productStyled = styled.div`
   padding: 1.5rem 1rem;
   width: 90%;
   max-width: 620px;
+  cursor: pointer;
 `;
 
 export const productLeftStyled = styled.div`

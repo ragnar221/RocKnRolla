@@ -16,7 +16,7 @@ const OrdersCard = () => {
   return (
     <MisOrdenesWrapper>
       {orders?.length ? (
-        orders.map((order) => <MyOrderCard key={order.id} {...order} />)
+        orders.map((order) => <MyOrderCard key={order._id} {...order} />)
       ) : (
         <h2 style={{ textAlign: "center" }}>
           ¡Que esperas para hacer tu primer pedido!

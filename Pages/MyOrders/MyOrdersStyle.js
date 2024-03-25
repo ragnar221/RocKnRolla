@@ -3,20 +3,21 @@ export const MisOrdenesWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
-  width: 30vw;
-
+  height: 100vw;
+  width: 40vw;
+  padding: 10px;
   gap: 1rem;
   flex-wrap: wrap;
+  overflow-y: scroll;
 `;
 
 export const OrderCard = styled.div`
   display: flex;
-
   padding: 0.5rem;
   border-radius: 0.4rem;
   text-align: center;
   box-shadow: 2px 4px 8px 2px var(--negroheader);
+  cursor: pointer;
 `;
 
 export const OrderInfoContainer = styled.div``;

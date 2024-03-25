@@ -6,10 +6,11 @@ padding: 2rem, 7rem;
 width: 100%;
 height: 100vh;
 display: flex;
-flex-direction: column;
+flex-direction:column;
 justify-content: center;
 align-items: center;
 gap: 5px;
+overflow-y: scroll;
 `;
 
 export const ResumenTitleStyled = styled.div`
@@ -35,7 +36,6 @@ export const ProductsContainerStyled = styled.div`
  display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  flex-wrap: wrap;
 `;
 
 export const HrStyled = styled.hr`
