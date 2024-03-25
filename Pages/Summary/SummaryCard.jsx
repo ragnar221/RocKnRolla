@@ -13,9 +13,7 @@ const SummaryCard = ({ name, quantity, img, price }) => {
     <ProductStyled>
       <ProductLeftStyled>
         <img src={img} alt={name} />
-        <div>
-          <h3>{name}</h3>
-        </div>
+        <h3>{name}</h3>
       </ProductLeftStyled>
       <PriceContainerStyled>
         <p>{quantity}</p>

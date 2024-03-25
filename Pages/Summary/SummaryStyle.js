@@ -3,22 +3,28 @@ import styled from "styled-components";
 
 export const ResumenContainerStyled = styled.div`
   padding: 2rem 7rem;
-  height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 export const ResumenTitleStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 `;
 
 export const StyledLink = styled(Link)`
   padding: 0.8rem 1.5rem;
   outline: none;
   border: none;
+  font-size: 30px;
+  font-weight: 600;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
   text-transform: uppercase;
-  font-weight: 400;
   cursor: pointer;
 
   & span {

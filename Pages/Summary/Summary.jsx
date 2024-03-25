@@ -13,6 +13,7 @@ import {
   ResumenContainerInfoStyled,
   ResumenContainerStyled,
   ResumenTitleStyled,
+  StyledLink,
 } from "./SummaryStyle";
 import OrdersSlice from "../../redux/Orders/OrdersSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -42,7 +43,8 @@ const Summary = () => {
     <ResumenContainerStyled>
       <ResumenTitleStyled>
         <h1>Resumen Orden: #{visitedOrder?._id.slice(0, 7)}</h1>
-        <Link to="/misordenes"></Link>
+        <StyledLink to="/misordenes"> volver
+        </StyledLink>
       </ResumenTitleStyled>
       <h2>Productos:</h2>
       <ProductsContainerStyled>

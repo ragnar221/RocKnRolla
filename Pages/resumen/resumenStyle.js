@@ -4,13 +4,12 @@ import styledfrom, { styled } from "styled-components";
 export const ResumenWrapperStyled = styled.div`
 padding: 2rem, 7rem;
 width: 100%;
-height: 100vh;
+//height: 100vh;
 display: flex;
 flex-direction:column;
 justify-content: center;
 align-items: center;
 gap: 5px;
-overflow-y: scroll;
 `;
 
 export const ResumenTitleStyled = styled.div`

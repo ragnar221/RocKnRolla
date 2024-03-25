@@ -34,7 +34,7 @@ const Routes = () => {
       />
       <Route path="/misordenes" element={<MyOrders />} />
       <Route path="/congrats" element={<Congrats />} />
-      <Route path="/resumen" element={<Resumen />} />
+      <Route path="/resumen/:orderId" element={<Summary />} />
       <Route path="/Blog" element={<Blog />} />
       <Route path="/userValidation" element={<UserValidation/>}/>
       <Route path="/welcome" element={<Welcome/>}/>

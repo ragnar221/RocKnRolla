@@ -27,14 +27,14 @@ const Resumen = () => {
         if(!orders) {
             getOrders(dispatch, currentUser)
         }
-        setVisitedOrder(orders?.find((order) => order._id === orderId))
+        setVisitedOrder(orders?.find((order) => order.id === orderId))
       } ,[currentUser, dispatch, orderId, orders])
 
       console.log(visitedOrder);
   return (
     <ResumenWrapperStyled>
         <ResumenTitleStyled>
-            <h1>resumen de la order: #{visitedOrder?.id.slice(0.7)}</h1>
+            <h1>resumen de la orden: #{visitedOrder?._id.slice(0,7)}</h1>
             <Link to="/misOrdenes" >volver a mis ordenes</Link>
         </ResumenTitleStyled>
         <h2>productos</h2>
